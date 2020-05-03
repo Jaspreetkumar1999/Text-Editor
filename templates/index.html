@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Text Editor</title>
+  </head>
+  <body style="background-color:#edb7a8" >
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://127.0.0.1:8000/">TE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="http://127.0.0.1:8000/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#services">services</a>
+      <a class="nav-item nav-link" href="#about">about us</a>
+        <a class="nav-item nav-link" href="#career">Career</a>
+
+<!--      <a class="nav-item nav-link disabled" href="#career" tabindex="-1" aria-disabled="true">Career</a>-->
+    </div>
+  </div>
+</nav>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey...</strong> Welcome to text analyzer ...enter your text below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div style=" display: flex;
+  align-items: center; margin-left:200px">
+
+ <form action="/analyze" method="post"  >{% csrf_token %}
+
+        <textarea name="text" style="width: 800px; height: 100px; border: solid black 2px;margin-top:100px" placeholder="Enter text here please"></textarea><br>
+<!--      <input type="checkbox" name="removepunc"> Removepunctuations-->
+<!--      <input type="checkbox" name="capital"> UPPERCASE-->
+<!--     <input type="checkbox" name="newline"> New line Remover-->
+<!--     <input type="checkbox" name="spaceRemover"> spaceRemover-->
+<!--     <input type="checkbox" name="characterCount"> characterCounter<br>-->
+   <div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch1" name="removepunc">
+  <label class="custom-control-label" for="customSwitch1">Removepunctuations</label>
+</div>
+ <div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch2" name="capital">
+  <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+</div>
+  <div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch3" name="newline">
+  <label class="custom-control-label" for="customSwitch3">New line Remover</label>
+</div>
+   <div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch4" name="spaceRemover">
+  <label class="custom-control-label" for="customSwitch4">spaceRemover</label>
+</div>
+      <div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch5"  name="characterCount">
+  <label class="custom-control-label" for="customSwitch5">characterCounter</label>
+</div>
+     <button type="submit">analyze text</button>
+ </form>
+</div>
+  <div id="services" style=" margin-left:30px;margin-top:100px">
+      <h3>Services</h3>
+      <blockquote class="blockquote text-center">
+  <p class="mb-0">Want to perform operations on text....Our monks are here to assist you.</p>
+  <footer class="blockquote-footer">Team <cite title="Source Title">Text Editor</cite></footer>
+</blockquote>
+
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Removepunctuations
+  </a>
+
+
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+    UPPERCASE
+  </a>
+
+
+
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+    New line Remover
+  </a>
+
+
+
+
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+    spaceRemover
+  </a>
+
+
+
+
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+    characterCounter
+  </a>
+
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+   Punctuation is a set of marks that regulates and clarifies the meanings of different texts. The term “punctuation” has originated from the Medieval Latin word “pūnctuātiōn,” which means markings or signs.There are 14 punctuation marks that are commonly used in English grammar. They are the period, question mark, exclamation point, comma, semicolon, colon, dash, hyphen, parentheses, brackets, braces, apostrophe, quotation marks, and ellipsis eg...= !"#$%&'()*+, -./:;<=>?@[\]^_`{|}~. We remove all punctuations from input.
+  </div>
+</div>
+      <div class="collapse" id="collapseExample1">
+  <div class="card card-body">
+  uppercase. By Vangie Beal. Uppercase characters are capital letters; lowercase characters are small letters. For example, box is in lowercase while BOX is in uppercase. The term is a vestige of the days when typesetters kept capital letters in a box above the lowercase letters. We convert lower case string into uppercase.
+  </div>
+</div>
+         <div class="collapse" id="collapseExample2">
+  <div class="card card-body">
+  Online Newline/Line Break Remover. Copy the text you want to process into the left area and the text will show up without the line breaks in the right area. Empty lines will not be removed.
+  </div>
+</div>
+             <div class="collapse" id="collapseExample3">
+  <div class="card card-body">
+  World's simplest whitespace, tab and newline deleter. Just paste your text in the form below, press spaceRemover button, and you get a single string back.
+  </div>
+</div>
+              <div class="collapse" id="collapseExample4">
+  <div class="card card-body">
+  The must-have Text Editor that provides an extensive report about the character count, word count, and many other useful statistics.
+  </div>
+</div>
+
+  </div>
+  <div  style="height:100px;width:1200px;">
+
+  </div>
+  <div id="about">
+      <h3>About us</h3>
+      <p> We are a group of likeminded MBA students who have identified several gaps in the online apparel industry and have decided to do something about it. Although we are early in our journey, the progress has been nothing short of exciting. To know more please feel free to contact with us at teamTE04@gmail.com.</p>
+       <h4> find us</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.006413544281!2d75.58853271514597!3d31.331195981432614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5a42162db125%3A0x3facb7c4b4f882a3!2sJalandhar%20City%20Junction!5e0!3m2!1sen!2sin!4v1588488433656!5m2!1sen!2sin" width="500" height="400" frameborder="0" style="border:0; margin-left:400px " allowfullscreen="" aria-hidden="false" tabindex="0" ></iframe>
+  </div>
+   <div id="career">
+
+       <marquee width="60%" direction="left" height="100px">
+Currently there is no job oportunity. but we will inform you soon regarding any other update
+</marquee>
+
+   </div>
+
+<div id="footer" style="margin-left:400px"> <h4>copyright@TeamTE</h4></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
